@@ -1,6 +1,7 @@
 -- Chromium-based abominations do not appreciate old good ctrl+w,
 -- this is a workaround to teach them.
 function normalizeDeleteWord()
+    local ctrlW
     local function deleteWord()
         local title = hs.window.focusedWindow():application():title()
         if title == "Google Chrome" or title == "Slack" then
@@ -12,7 +13,7 @@ function normalizeDeleteWord()
         end
     end
 
-    local ctrlW = hs.hotkey.bind({"ctrl"}, "w", deleteWord, nil, nil)
+    ctrlW = hs.hotkey.bind({"ctrl"}, "w", deleteWord, nil, nil)
 end
 
 function centerMouseInWindow()
