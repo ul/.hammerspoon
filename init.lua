@@ -13,6 +13,7 @@ bindApps(
         e = "Emacs",
         f = "Figma",
         l = "Slack",
+        n = "Notes",
         s = "Google Chrome",
         t = "iTerm",
         z = "zoom.us"
@@ -34,5 +35,7 @@ bindActions(
 )
 
 normalizeDeleteWord()
+
+killZoomOnMonitorOff():start()
 
 hs.alert.show("Hammerspoon is ready")

@@ -20,3 +20,14 @@ function centerMouseInWindow()
     local frame = hs.window.focusedWindow():frame()
     hs.mouse.setAbsolutePosition(frame.center)
 end
+
+function killZoomOnMonitorOff()
+    local screenUUID = "3192FE8A-349C-45C9-A311-099F7EBC9308"
+    return hs.screen.watcher.new(
+        function()
+            if not hs.screen.find(screenUUID) then
+                hs.application("zoom.us"):kill()
+            end
+        end
+    )
+end
