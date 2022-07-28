@@ -8,6 +8,7 @@ require("misc")
 bindApps(
     {
         a = "Activity Monitor",
+        b = "Logseq",
         c = "Visual Studio Code",
         d = "Dash",
         e = "Emacs",
