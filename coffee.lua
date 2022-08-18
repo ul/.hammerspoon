@@ -1,7 +1,7 @@
 -- This module helps to avoid mandatory screen lock in the trusted environment
 -- which is detected as "my external monitor is connected and is on".
 
-local screenUUID = "3192FE8A-349C-45C9-A311-099F7EBC9308"
+local screenUUID = "C13F5D79-658E-43E8-AC39-E9195A9BFAC4"
 
 local coffee = nil
 
