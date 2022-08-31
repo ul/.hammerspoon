@@ -11,7 +11,7 @@ bindApps(
         b = "Logseq",
         c = "Visual Studio Code",
         d = "Dash",
-        e = "Emacs",
+        e = "/Users/rprakapchuk/.nix-profile/bin/emacs",
         f = "Figma",
         l = "Slack",
         n = "Notes",
