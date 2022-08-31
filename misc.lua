@@ -22,12 +22,33 @@ function centerMouseInWindow()
 end
 
 function killZoomOnMonitorOff()
-    local screenUUID = "3192FE8A-349C-45C9-A311-099F7EBC9308"
+    local screenUUID = "C13F5D79-658E-43E8-AC39-E9195A9BFAC4"
     return hs.screen.watcher.new(
         function()
             if not hs.screen.find(screenUUID) then
                 hs.application("zoom.us"):kill()
             end
+        end
+    )
+end
+
+function hideChromeUSBPopup()
+    return hs.window.filter.new(
+        function(w)
+            return (w:application() ~= nil) and (w:application():title() == "Google Chrome") and
+                (w:frame().area == 32400)
+        end
+    ):subscribe(
+        hs.window.filter.windowCreated,
+        function(w)
+            -- w:close() doesn't work on that popup, thus just moving it out of the way
+            -- also have to inject delay as Chrome positions the window after creation
+            hs.timer.doAfter(
+                1,
+                function()
+                    w:setTopLeft({hs.screen.mainScreen():frame().w, 0})
+                end
+            )
         end
     )
 end

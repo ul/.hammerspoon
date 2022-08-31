@@ -38,5 +38,6 @@ bindActions(
 normalizeDeleteWord()
 
 killZoomOnMonitorOff():start()
+hideChromeUSBPopup()
 
 hs.alert.show("Hammerspoon is ready")
