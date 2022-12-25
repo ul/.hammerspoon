@@ -4,7 +4,10 @@ function normalizeDeleteWord()
     local ctrlW
     local function deleteWord()
         local title = hs.window.focusedWindow():application():title()
-        if title == "Google Chrome" or title == "Slack" then
+        if
+            title == "Google Chrome" or title == "Slack" or title == "Discord" or title == "Safari" or
+                title == "RustDesk"
+         then
             hs.eventtap.keyStroke({"alt"}, "delete", 0)
         else
             ctrlW:disable()

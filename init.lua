@@ -8,13 +8,21 @@ require("misc")
 bindApps(
     {
         a = "Activity Monitor",
-        c = "Visual Studio Code",
-        d = "Dash",
-        e = "EmacsMac",
-        l = "Slack",
-        s = "Google Chrome",
-        t = "iTerm",
-        z = "zoom.us"
+        b = "Logseq",
+        c = "Google Chrome",
+        d = "Discord",
+        -- e = "/Users/ul/Applications/Nix Apps/Emacs.app",
+        e = "/Users/ul/.nix-profile/Applications/Emacs.app",
+        -- e = "Emacs",
+        f = "Figma",
+        l = "Telegram",
+        n = "Notes",
+        p = "SuperCollider",
+        s = "Safari",
+        t = "/Users/ul/.nix-profile/Applications/WezTerm.app",
+        -- t = "WezTerm",
+        u = "Unity",
+        v = "Visual Studio Code"
     }
 )
 
@@ -22,7 +30,6 @@ bindActions(
     {
         c = hs.spotify.playpause,
         g = goURL,
-        j = goJ,
         k = toggleCoffee,
         r = hs.reload,
         v = hs.spotify.displayCurrentTrack,

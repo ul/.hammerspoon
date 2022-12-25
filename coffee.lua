@@ -1,7 +1,7 @@
 -- This module helps to avoid mandatory screen lock in the trusted environment
 -- which is detected as "my external monitor is connected and is on".
 
-local screenId = 724069461
+local screenId = "DE32F816-9BF2-42CB-850D-5C5451299433"
 
 local coffee = nil
 
