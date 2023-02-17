@@ -4,19 +4,20 @@ require("clipboard_actions")
 -- N.B. clipboard_sequences sets up own bindings
 require("clipboard_sequences")
 require("misc")
+require("key")
 
 bindApps(
     {
         a = "Activity Monitor",
-        b = "Logseq",
-        c = "Visual Studio Code",
+        b = "RustDesk",
+        c = "Google Chrome",
         d = "Dash",
-        e = "/Users/rprakapchuk/.nix-profile/bin/emacs",
-        f = "Figma",
+        e = "Emacs",
+        i = "IntelliJ IDEA",
         l = "Slack",
         n = "Notes",
         s = "Google Chrome",
-        t = "iTerm",
+        v = "Visual Studio Code",
         z = "zoom.us"
     }
 )
@@ -34,6 +35,8 @@ bindActions(
         z = hs.spotify.previous
     }
 )
+
+hs.hotkey.bind(hyper, "q", nil, turnTheKey)
 
 normalizeDeleteWord()
 
