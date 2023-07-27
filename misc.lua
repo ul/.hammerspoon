@@ -52,3 +52,7 @@ function hideChromeUSBPopup()
         end
     )
 end
+
+function openRecentTerminal()
+    hs.execute("switch-to-terminal", true)
+end

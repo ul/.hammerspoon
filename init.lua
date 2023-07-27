@@ -38,6 +38,8 @@ bindActions(
 
 hs.hotkey.bind(hyper, "q", nil, turnTheKey)
 
+hs.hotkey.bind(meh, "t", openRecentTerminal)
+
 normalizeDeleteWord()
 
 killZoomOnMonitorOff():start()
