@@ -1,3 +1,4 @@
+-- analyse with `awk 'BEGIN { FS = ": " ; OFS = ": " } {array[$1] += $2} END {for (key in array) print key, array[key]}' ~/keyStats.txt | sort -t: -k2nr`
 local logPath = "/Users/rprakapchuk/keyStats.txt"
 local keyStats = {}
 
