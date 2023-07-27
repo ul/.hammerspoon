@@ -2,7 +2,7 @@ require("hyper_meh")
 require("coffee")
 require("clipboard_actions")
 -- N.B. clipboard_sequences sets up own bindings
-require("clipboard_sequences")
+-- require("clipboard_sequences")
 require("misc")
 require("key")
 
@@ -40,9 +40,11 @@ hs.hotkey.bind(hyper, "q", nil, turnTheKey)
 
 hs.hotkey.bind(meh, "t", openRecentTerminal)
 
-normalizeDeleteWord()
+-- normalizeDeleteWord()
 
 killZoomOnMonitorOff():start()
 hideChromeUSBPopup()
+
+require("keystats")
 
 hs.alert.show("Hammerspoon is ready")
