@@ -5,21 +5,23 @@ require("clipboard_actions")
 require("clipboard_sequences")
 require("misc")
 
+require("hs.ipc")
+
 bindApps(
     {
         a = "Activity Monitor",
         b = "Logseq",
         c = "Google Chrome",
         d = "Discord",
-        -- e = "/Users/ul/Applications/Nix Apps/Emacs.app",
-        e = "/Users/ul/.nix-profile/Applications/Emacs.app",
-        -- e = "Emacs",
+        -- e = "/Users/ul/Applications/Home Manager Apps/Emacs.app",
+        -- e = "/Users/ul/.nix-profile/Applications/Emacs.app",
+        e = "Emacs",
         f = "Figma",
         l = "Telegram",
         n = "Notes",
         p = "SuperCollider",
         s = "Safari",
-        t = "/Users/ul/.nix-profile/Applications/WezTerm.app",
+        -- t = "/Users/ul/.nix-profile/Applications/WezTerm.app",
         -- t = "WezTerm",
         u = "Unity",
         v = "Visual Studio Code"
@@ -37,6 +39,14 @@ bindActions(
         y = centerMouseInWindow,
         z = hs.spotify.previous
     }
+)
+
+hs.hotkey.bind(
+    meh,
+    "t",
+    function()
+        hs.execute("switch-to-terminal", true)
+    end
 )
 
 normalizeDeleteWord()
