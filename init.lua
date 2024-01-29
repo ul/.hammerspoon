@@ -4,16 +4,14 @@ require("clipboard_actions")
 -- N.B. clipboard_sequences sets up own bindings
 -- require("clipboard_sequences")
 require("misc")
-require("key")
 
 bindApps(
     {
-        a = "Activity Monitor",
-        b = "RustDesk",
-        c = "Google Chrome",
-        d = "Dash",
-        e = "Emacs",
-        i = "IntelliJ IDEA",
+        a = "Anytype",
+        c = "Visual Studio Code",
+        e = "/Users/rprakapchuk/Applications/Home Manager Apps/Emacs.app",
+        -- e = "Emacs",
+        -- i = "IntelliJ IDEA Ultimate",
         l = "Slack",
         n = "Notes",
         s = "Google Chrome",
@@ -25,6 +23,7 @@ bindApps(
 bindActions(
     {
         c = hs.spotify.playpause,
+        e = emacsEverywhereSafe,
         g = goURL,
         j = goJ,
         k = toggleCoffee,
@@ -35,10 +34,6 @@ bindActions(
         z = hs.spotify.previous
     }
 )
-
-hs.hotkey.bind(hyper, "q", nil, turnTheKey)
-
-hs.hotkey.bind(meh, "t", openRecentTerminal)
 
 -- normalizeDeleteWord()
 

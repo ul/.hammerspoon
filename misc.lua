@@ -53,6 +53,25 @@ function hideChromeUSBPopup()
     )
 end
 
-function openRecentTerminal()
-    hs.execute("switch-to-terminal", true)
+function emacsEverywhere()
+    hs.task.new("/Users/rprakapchuk/.nix-profile/bin/emacsclient", nil, { "--eval", "(emacs-everywhere)" }):start()
+end
+
+function emacsEverywhereSafe()
+    local controlKeyWatcher
+
+    local function controlKeyCallback(event)
+        if not event:getFlags().ctrl then
+            if controlKeyWatcher then
+                controlKeyWatcher:stop()
+                controlKeyWatcher = nil
+                hs.timer.doAfter(0.05, emacsEverywhere)
+            end
+        end
+
+        return false
+    end
+
+    controlKeyWatcher = hs.eventtap.new({hs.eventtap.event.types.flagsChanged}, controlKeyCallback)
+    controlKeyWatcher:start()
 end

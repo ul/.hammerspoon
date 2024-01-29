@@ -37,11 +37,11 @@ function toggleCoffee()
         autoCoffee:stop()
         takeMelatonin()
         isAutoCoffee = false
-        hs.alert.show("No more coffee today")
+        hs.alert.show("  🔒  ")
     else
         autoCoffee:start()
         takeCoffee()
         isAutoCoffee = true
-        hs.alert.show("Coffee!")
+        hs.alert.show("  ☕️  ")
     end
 end
