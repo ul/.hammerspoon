@@ -1,7 +1,12 @@
 -- This module helps to avoid mandatory screen lock in the trusted environment
 -- which is detected as "my external monitor is connected and is on".
 
-local screenUUID = "C13F5D79-658E-43E8-AC39-E9195A9BFAC4"
+--
+local screenUUIDs = {"C13F5D79-658E-43E8-AC39-E9195A9BFAC4", "7ABAF228-FFBD-4B98-B7D4-F6DB06CC9556"}
+
+local function isScreenConnected(uuid)
+    return hs.screen.find(uuid) ~= nil
+end
 
 local coffee = nil
 
@@ -22,7 +27,16 @@ end
 local autoCoffee =
     hs.screen.watcher.new(
     function()
-        if hs.screen.find(screenUUID) then
+        local anyScreenConnected = false
+
+        for _, uuid in ipairs(screenUUIDs) do
+            if isScreenConnected(uuid) then
+                anyScreenConnected = true
+                break
+            end
+        end
+
+        if anyScreenConnected then
             takeCoffee()
         else
             takeMelatonin()
