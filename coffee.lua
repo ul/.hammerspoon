@@ -2,26 +2,26 @@
 -- which is detected as "my external monitor is connected and is on".
 
 --
-local screenUUIDs = {"C13F5D79-658E-43E8-AC39-E9195A9BFAC4", "7ABAF228-FFBD-4B98-B7D4-F6DB06CC9556"}
+local screenUUIDs = {"C13F5D79-658E-43E8-AC39-E9195A9BFAC4", "7ABAF228-FFBD-4B98-B7D4-F6DB06CC9556", "F28E8228-B03D-4E0C-81D7-3323543C4429"}
 
 local function isScreenConnected(uuid)
     return hs.screen.find(uuid) ~= nil
 end
 
-local coffee = nil
+local coffee = hs.timer.new(60, hs.caffeinate.declareUserActivity)
 
 local function takeCoffee()
-    if not coffee then
-        coffee = hs.task.new("/usr/bin/caffeinate", nil, {"-usd"})
-        coffee:start()
-    end
+    coffee:start()
+    hs.caffeinate.set("displayIdle", true)
+    hs.caffeinate.set("systemIdle", true)
+    hs.caffeinate.set("system", true)
 end
 
 local function takeMelatonin()
-    if coffee then
-        coffee:terminate()
-        coffee = nil
-    end
+    coffee:stop()
+    hs.caffeinate.set("displayIdle", false)
+    hs.caffeinate.set("systemIdle", false)
+    hs.caffeinate.set("system", false)
 end
 
 local autoCoffee =
