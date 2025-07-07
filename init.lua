@@ -10,8 +10,6 @@ bindActions(
         g = goURL,
         j = goJ,
         k = toggleCoffee,
-        r = hs.reload,
-        y = centerMouseInWindow,
     }
 )
 
