@@ -2,7 +2,7 @@
 -- which is detected as "my external monitor is connected and is on".
 
 --
-local screenUUIDs = {"C13F5D79-658E-43E8-AC39-E9195A9BFAC4", "7ABAF228-FFBD-4B98-B7D4-F6DB06CC9556", "F28E8228-B03D-4E0C-81D7-3323543C4429"}
+local screenUUIDs = {"C13F5D79-658E-43E8-AC39-E9195A9BFAC4", "7ABAF228-FFBD-4B98-B7D4-F6DB06CC9556", "F28E8228-B03D-4E0C-81D7-3323543C4429", "01732456-0303-46AE-8497-7782C8D2FA4F"}
 
 local function isScreenConnected(uuid)
     return hs.screen.find(uuid) ~= nil
