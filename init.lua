@@ -4,12 +4,24 @@ require("clipboard_actions")
 -- N.B. clipboard_sequences sets up own bindings
 -- require("clipboard_sequences")
 require("misc")
+require("paper")
+
+bindApps(
+    {
+        a = "Anytype",
+        e = "/Users/rprakapchuk/Applications/Home Manager Apps/Emacs.app",
+        l = "Slack",
+        s = "Google Chrome",
+        t = "Ghostty",
+        z = "zoom.us"
+    }
+)
 
 bindActions(
     {
         g = goURL,
         j = goJ,
-        k = toggleCoffee,
+        k = toggleCoffee
     }
 )
 
