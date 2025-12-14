@@ -34,7 +34,7 @@ hs.window.animationDuration = 0
 PaperWM = hs.loadSpoon("PaperWM")
 PaperWM.window_gap = 0
 PaperWM.window_ratios = {1 / 4, 1 / 3, 1 / 2, 2 / 3, 3 / 4}
-PaperWM.swipe_fingers = 4
+PaperWM.swipe_fingers = 3
 PaperWM.lift_window = meh
 PaperWM:bindHotkeys(
     {
@@ -70,6 +70,7 @@ bindApps(
         a = "Anytype",
         b = "Logseq",
         e = "/Users/ul/Applications/Home Manager Apps/Emacs.app",
+        l = "Telegram",
         s = "Safari",
         t = "Ghostty",
     }
