@@ -2,28 +2,28 @@ require("hyper_meh")
 require("coffee")
 require("clipboard_actions")
 -- N.B. clipboard_sequences sets up own bindings
-require("clipboard_sequences")
+-- require("clipboard_sequences")
 require("misc")
 
 require("hs.ipc")
 
 bindApps(
     {
-        a = "Activity Monitor",
+        a = "AnyType",
         b = "Logseq",
         c = "Google Chrome",
         d = "Discord",
-        -- e = "/Users/ul/Applications/Home Manager Apps/Emacs.app",
+        e = "/Users/ul/Applications/Home Manager Apps/Emacs.app",
         -- e = "/Users/ul/.nix-profile/Applications/Emacs.app",
-        e = "Emacs",
+        -- e = "Emacs",
         f = "Figma",
+        h = "/Users/ul/ergral-3d/target/hotreload",
+        k = "Anki",
         l = "Telegram",
         n = "Notes",
         p = "SuperCollider",
         s = "Safari",
-        -- t = "/Users/ul/.nix-profile/Applications/WezTerm.app",
-        -- t = "WezTerm",
-        u = "Unity",
+        -- u = "Unity",
         v = "Visual Studio Code"
     }
 )
@@ -49,6 +49,8 @@ hs.hotkey.bind(
     end
 )
 
-normalizeDeleteWord()
+-- normalizeDeleteWord()
+
+require("keystats")
 
 hs.alert.show("Hammerspoon is ready")
