@@ -70,6 +70,7 @@ bindApps(
         a = "Anytype",
         b = "Logseq",
         e = "/Users/ul/Applications/Home Manager Apps/Emacs.app",
+        f = "Nimble Commander",
         l = "Telegram",
         s = "Safari",
         t = "Ghostty",
