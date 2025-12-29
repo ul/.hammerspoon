@@ -10,6 +10,7 @@ bindApps(
     {
         a = "Anytype",
         e = "/Users/rprakapchuk/Applications/Home Manager Apps/Emacs.app",
+        i = "IntelliJ IDEA",
         l = "Slack",
         s = "Google Chrome",
         t = "Ghostty",

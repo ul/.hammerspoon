@@ -5,7 +5,7 @@ hs.window.animationDuration = 0
 PaperWM = hs.loadSpoon("PaperWM")
 PaperWM.window_gap = 0
 PaperWM.window_ratios = {1 / 4, 1 / 3, 1 / 2, 2 / 3, 3 / 4}
-PaperWM.swipe_fingers = 4
+PaperWM.swipe_fingers = 3
 PaperWM.lift_window = meh
 PaperWM:bindHotkeys(
     {
@@ -31,7 +31,9 @@ PaperWM:bindHotkeys(
         slurp_in = {hyper, "i"},
         barf_out = {hyper, "o"},
         -- move the focused window into / out of the tiling layer
-        toggle_floating = {hyper, "t"}
+        toggle_floating = {hyper, "t"},
+        -- move between screens
+        move_window_to_next_screen = {hyper, "v"}
     }
 )
 PaperWM:start()
