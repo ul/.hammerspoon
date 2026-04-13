@@ -37,3 +37,7 @@ PaperWM:bindHotkeys(
     }
 )
 PaperWM:start()
+
+WarpMouse = hs.loadSpoon("WarpMouse")
+-- WarpMouse.margin = 8  -- optionally set how far past a screen edge the mouse should warp, default is 2 pixels
+WarpMouse:start()
