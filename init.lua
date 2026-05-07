@@ -5,6 +5,9 @@ require("clipboard_actions")
 -- require("clipboard_sequences")
 require("misc")
 require("paper")
+notifications = require("notifications")
+
+hs.hotkey.bind(hyper, "N", notifications.activate)
 
 bindApps(
     {
